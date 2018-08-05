@@ -1,6 +1,6 @@
 <template>
     <div class="home-icons">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showSwiper">
             <swiper-slide v-for="(page, index) in pages" :key="index">
             <!-- <swiper-slide> -->
                 <div class="icon" v-for="item in page" :key="item.id">
@@ -20,71 +20,14 @@ export default {
   data() {
     return {
       swiperOption: {
-          loop: true
-      },
-      iconList: [
-        {
-          id: "0001",
-          name: "景点门票",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
-        },
-        {
-          id: "0002",
-          name: "一日游",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png"
-        },
-        {
-          id: "0003",
-          name: "游乐场",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png"
-        },
-        {
-          id: "0004",
-          name: "动植物园",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png"
-        },
-        {
-          id: "0005",
-          name: "大连必游",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-        },
-        {
-          id: "0006",
-          name: "海洋馆",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png"
-        },
-        {
-          id: "0007",
-          name: "汽车票",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png"
-        },
-        {
-          id: "0008",
-          name: "夏日玩水",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png"
-        },
-        {
-          id: "0009",
-          name: "演出",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png"
-        },
-        {
-          id: "0010",
-          name: "全部玩乐",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png"
-        }
-      ]
+          loop: true,
+          autoplay: false
+      }
     };
+  },
+
+  props: {
+      iconList: Array
   },
 
   computed: {
@@ -98,6 +41,10 @@ export default {
               pages[page].push(item);
           });
           return pages;
+      },
+
+      showSwiper () {
+          return this.iconList.length;
       }
   },
 

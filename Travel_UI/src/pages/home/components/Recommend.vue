@@ -18,28 +18,11 @@
     export default {
         name: 'HomeRecommend',
         data () {
-            return {
-                recomendList: [
-                    {
-                        id: '001',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/39/39f6b1003abe1b2790.img.jpg_200x200_a7051b04.jpg',
-                        title: '老虎滩海洋公园',
-                        desc: '16485条评论'
-                    },
-                    {
-                        id: '002',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1703/94/944fc059260bd728a3.water.jpg_200x200_742cb84f.jpg',
-                        title: '海昌发现王国',
-                        desc: '17080条评论'
-                    },
-                    {
-                        id: '003',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/57/5729585581b6732fa3.water.jpg_200x200_85298361.jpg',
-                        title: '大连森林动物园',
-                        desc: '14210条评论'
-                    }
-                ]
-            }
+            return {}
+        },
+
+        props: {
+            recomendList: Array
         }
     }
 </script>

@@ -8,14 +8,20 @@
             输入城市/景点/游玩主题
             </div>
         <div class="header-right">
-            城市
+            {{city}}
             <span class="iconfont arrow-icon">&#xe6aa;</span>
             </div>
     </div>
 </template>
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  props: {
+      'city': {
+          type: String,
+          default: '城市'
+      }
+  }
 };
 </script>
 
@@ -32,7 +38,8 @@ export default {
             text-align: center
             font-size: .4rem
     .header-right
-        width: 1.24rem
+        // width: 1.24rem
+        padding: 0 .1rem
         text-align:center
         .arrow-icon
             font-size: .24rem
