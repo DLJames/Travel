@@ -111,36 +111,38 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
-.home-icons >>> .swiper-container
-    width: 100%;
-    height: 0;
-    padding-bottom: 50%;
-.icon 
-    position: relative;
-    width: 25%;
-    height: 0;
-    padding-bottom: 25%;
-    float: left;
-    overflow: hidden;
-    .icon-img-con 
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        padding: 0.1rem;
-        box-sizing: border-box;
-        bottom: 0.44rem;
-        .icon-image 
-            height: 100%;
-            display: block;
-            margin: 0 auto;
-    .icon-desc 
-        color: $darkTextColor;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        line-height: 0.44rem;
-        text-align: center;
-        ellipsis()
+    .home-icons >>> .swiper-container
+        width: 100%;
+        height: 0;
+        padding-bottom: 50%;
+    .home-icons 
+        margin-top .2rem
+        .icon 
+            position: relative;
+            width: 25%;
+            height: 0;
+            padding-bottom: 25%;
+            float: left;
+            overflow: hidden;
+            .icon-img-con 
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                padding: 0.1rem;
+                box-sizing: border-box;
+                bottom: 0.44rem;
+                .icon-image 
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+            .icon-desc 
+                color: $darkTextColor;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                line-height: 0.44rem;
+                text-align: center;
+                ellipsis()
 </style>
