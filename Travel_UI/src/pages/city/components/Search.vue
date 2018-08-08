@@ -5,7 +5,7 @@
         </div>
         <div class="search-content" ref="scrollView" v-show="keyWord">
             <ul>
-                <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+                <li class="search-item border-bottom" v-for="item in list" :key="item.id" @click="changeCity(item.name)">{{item.name}}</li>
                 <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
             </ul>
         </div>
@@ -59,6 +59,14 @@
                     }
                     this.list = result
                 }, 100)
+            }
+        },
+
+        methods: {
+            changeCity (city) {
+                this.keyWord = ''
+                this.$store.commit('changeCity', city)
+                this.$router.push('/')
             }
         }
     }

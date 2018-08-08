@@ -16,13 +16,16 @@
     </div>
 </template>
 <script>
+import {mapState} from 'vuex'
+
 export default {
   name: "HomeHeader",
-  props: {
-      'city': {
-          type: String,
-          default: '城市'
-      }
+
+  computed: {
+    //   city () {
+    //       return this.$store.state.city
+    //   }
+    ...mapState(['city'])
   }
 };
 </script>
